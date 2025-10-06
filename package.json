@@ -9,8 +9,7 @@
     "start": "next start",
     "lint": "next lint",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d out -t true"
-  },
+    "deploy": "node ./node_modules/gh-pages/bin/gh-pages-cli.js -d out -t true"  },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
     "@radix-ui/react-accordion": "1.2.2",
