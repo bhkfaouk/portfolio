@@ -1,17 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-  typescript: {
-    ignoreBuildErrors: true,
-  },
+  output: 'export',
   images: {
     unoptimized: true,
   },
-  output: 'export', // 👈 Important: enables static export for GitHub Pages
-  basePath: '/PORTFOLIO_PROD', // 👈 change this to your repo name
-  assetPrefix: '/PORTFOLIO_PROD/', // 👈 same repo name
+  basePath: process.env.NODE_ENV === 'production' ? '/portfolio' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/portfolio/' : '',
 }
 
-export default nextConfig
+module.exports = nextConfig
