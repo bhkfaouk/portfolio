@@ -29,7 +29,8 @@ export function Hero() {
       clearInterval(cursorTimer)
     }
   }, [])
-
+  // Use basePath from next.config for consistent paths
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ""
   return (
     <section className="min-h-screen flex items-center justify-center relative pt-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -46,7 +47,7 @@ export function Hero() {
           </div>
           <div className="flex gap-4 justify-center mt-8">
             <a
-              href="/CV_farouk_bouhaka.pdf"
+                href={`${basePath}/CV_farouk_bouhaka.pdf`}
               download
               className="px-8 py-3 bg-accent text-background rounded-lg font-medium hover:bg-accent/90 transition-all hover:shadow-glow"
             >

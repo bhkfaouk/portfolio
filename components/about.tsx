@@ -51,8 +51,7 @@ export function About() {
             <div className="relative w-64 h-64 flex-shrink-0">
               <div className="absolute inset-0 bg-accent/20 rounded-2xl blur-2xl" />
               <div className="relative w-full h-full rounded-2xl overflow-hidden border-2 border-accent/30 glow">
-                <Image
-                  src="/professional-developer-portrait.png"
+                <Image src="/portfolio/professional-developer-portrait.png"
                   alt="Profile"
                   width={256}
                   height={256}
