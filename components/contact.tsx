@@ -83,9 +83,9 @@ export function Contact() {
   ]
 
   const socialLinks = [
-    { icon: Github, href: "https://github.com/faroukbouhaka", label: "GitHub" },
-    { icon: Linkedin, href: "https://linkedin.com/in/faroukbouhaka", label: "LinkedIn" },
-    { icon: Twitter, href: "https://twitter.com/faroukbouhaka", label: "Twitter" },
+    { icon: Github, href: "https://github.com/bhkfaouk", label: "GitHub" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/farouk-bouhaka-4006a7235/", label: "LinkedIn" },
+    { icon: Twitter, href: "https://x.com/FBouhaka", label: "X (Twitter)" },
   ]
 
   return (
