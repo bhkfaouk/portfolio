@@ -46,7 +46,7 @@ export function Hero() {
           </div>
           <div className="flex gap-4 justify-center mt-8">
             <a
-              href="/farouk-bouhaka-cv.pdf"
+              href="/CV_farouk_bouhaka.pdf"
               download
               className="px-8 py-3 bg-accent text-background rounded-lg font-medium hover:bg-accent/90 transition-all hover:shadow-glow"
             >

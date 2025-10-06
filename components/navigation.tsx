@@ -48,7 +48,7 @@ export function Navigation() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-8">
-            <span className="text-xl font-bold glow-text">Portfolio</span>
+            <span className="text-xl font-bold glow-text">FAROUK BOUHAKA</span>
             <div className="hidden md:flex items-center gap-6">
               {navItems.map(({ id, label }) => (
                 <button
@@ -65,7 +65,7 @@ export function Navigation() {
           </div>
           <div className="flex items-center gap-2">
             <Button variant="ghost" size="sm" asChild className="hidden sm:flex">
-              <a href="/CV.pdf" download>
+              <a href="/CV_farouk_bouhaka.pdf" download>
                 <Download className="h-4 w-4 mr-2" />
                 Download CV
               </a>

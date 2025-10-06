@@ -12,7 +12,7 @@ export function Footer() {
     <footer className="py-8 border-t border-border">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} Your Name. All rights reserved.</p>
+          <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} Farouk Bouhaka. All rights reserved.</p>
           <Button variant="ghost" size="icon" onClick={scrollToTop} className="glow">
             <ArrowUp className="h-5 w-5" />
           </Button>
