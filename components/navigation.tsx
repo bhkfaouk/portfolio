@@ -42,7 +42,7 @@ export function Navigation() {
       element.scrollIntoView({ behavior: "smooth" })
     }
   }
-
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ""
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -65,7 +65,7 @@ export function Navigation() {
           </div>
           <div className="flex items-center gap-2">
             <Button variant="ghost" size="sm" asChild className="hidden sm:flex">
-              <a href="/CV_farouk_bouhaka.pdf" download>
+              <a href={`${basePath}/CV_farouk_bouhaka.pdf`} download="CV_Farouk_Bouhaka.pdf">
                 <Download className="h-4 w-4 mr-2" />
                 Download CV
               </a>
