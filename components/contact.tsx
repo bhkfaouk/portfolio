@@ -4,9 +4,8 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Github, Linkedin, Mail, Twitter, Send, MapPin, Phone } from "lucide-react"
+import { Github, Linkedin, Mail, Twitter, Send, MapPin, Phone } from 'lucide-react'
 import { useToast } from "@/hooks/use-toast"
-import emailjs from "@emailjs/browser"
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -22,27 +21,36 @@ export function Contact() {
     setIsSubmitting(true)
 
     try {
-      const serviceId = "service_couwz2l"
-      const templateId = "template_bcxxfvq"
-      const publicKey = "DolSJ_c4UGenNNaB4"
+      // Replace YOUR_FORM_ENDPOINT_ID with your actual GetForm.io form ID
+      const getformEndpoint = "https://getform.io/f/bgdjzema"
 
-      const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        message: formData.message,
-        to_name: "Farouk Bouhaka",
-      }
-
-      await emailjs.send(serviceId, templateId, templateParams, publicKey)
-
-      toast({
-        title: "Message sent successfully!",
-        description: "Thank you for reaching out. I'll get back to you soon.",
+      const response = await fetch(getformEndpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          to_name: "Farouk Bouhaka",
+          _gotcha: "", // Honeypot field for spam protection
+        }),
       })
 
-      setFormData({ name: "", email: "", message: "" })
+      if (response.ok) {
+        toast({
+          title: "Message sent successfully!",
+          description: "Thank you for reaching out. I'll get back to you soon.",
+        })
+
+        setFormData({ name: "", email: "", message: "" })
+      } else {
+        throw new Error("Failed to send message")
+      }
     } catch (error) {
-      console.error("EmailJS Error:", error)
+      console.error("GetForm Error:", error)
       toast({
         title: "Failed to send message",
         description: "Something went wrong. Please try again or contact me directly via email.",
