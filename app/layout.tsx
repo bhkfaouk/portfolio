@@ -19,18 +19,32 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({
-  children,
-}: Readonly<{
+                                     children,
+                                   }: Readonly<{
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+      <html lang="en" suppressHydrationWarning>
+      <head>
+        <meta
+            httpEquiv="Content-Security-Policy"
+            content="
+            default-src 'self';
+            img-src 'self' data: blob:;
+            font-src 'self' data:;
+            style-src 'self' 'unsafe-inline';
+            script-src 'self';
+          "
+        />
+      </head>
+
       <body className={`font-sans ${inter.variable} ${GeistMono.variable} antialiased`}>
-        <Suspense fallback={null}>
-          {children}
-          <Analytics />
-        </Suspense>
+      <Suspense fallback={null}>
+        {children}
+        <Analytics />
+      </Suspense>
       </body>
-    </html>
+      </html>
+
   )
 }
